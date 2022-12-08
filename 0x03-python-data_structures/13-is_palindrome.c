@@ -1,30 +1,72 @@
 #include "lists.h"
-#include <stdlib.h>
-#include <stdio.h>
+
 /**
- * is_palindrome - checks if singly linked list pointed to
- * is a palindrome
- * @head: pointer to list
- * Return: return 1 if true otherwwise 0
-*/
+ * reverse_listint - reverses a linked list
+ * @head: pointer to the first node in the list
+ *
+ * Return: pointer to the first node in the new list
+ */
+void reverse_listint(listint_t **head)
+{
+	listint_t *prev = NULL;
+	listint_t *current = *head;
+	listint_t *next = NULL;
+
+	while (current)
+	{
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+
+	*head = prev;
+}
+
+/**
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
+ *
+ * Return: 1 if it is, 0 if not
+ */
 int is_palindrome(listint_t **head)
 {
-    int stack [500], pos;
-    listint_t *ptr = NULL;
+	listint_t *slow = *head, *fast = *head, *temp = *head, *dup = NULL;
 
-    if (head == NULL || *head == NULL)
-        return (0);
-    ptr = *head;
-    for (pos = 0; ptr->next; ptr = ptr->next, pos++)
-    {
-        if (pos == 0)/**first point, avoid seg fault*/
-            stack[pos] = ptr->n;
-        else if (ptr->n != stack[pos - 1]) /**compare with top*/    
-            stack[pos] = ptr->n;
-        else if (ptr->n == stack[pos - 1])/**on match*/
-            pos -= 2;
-    }
-    if (pos == 1 && ptr->n == stack[0])
-        return (1);
-    return (0);
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+
+	while (1)
+	{
+		fast = fast->next->next;
+		if (!fast)
+		{
+			dup = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			dup = slow->next->next;
+			break;
+		}
+		slow = slow->next;
+	}
+
+	reverse_listint(&dup);
+
+	while (dup && temp)
+	{
+		if (temp->n == dup->n)
+		{
+			dup = dup->next;
+			temp = temp->next;
+		}
+		else
+			return (0);
+	}
+
+	if (!dup)
+		return (1);
+
+	return (0);
 }
