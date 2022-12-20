@@ -1,7 +1,13 @@
 #!/usr/bin/python3
+'''
+Module of a Square Class
+'''
+
+
 class Square:
-    """
-    Defines a square by dimensions
+    """Defines a square by dimensions
+    Attributes:
+        size: The size of the square
     """
     
     def __init__(self, size):
