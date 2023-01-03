@@ -1,0 +1,19 @@
+>>> indent = __import__('5-text_indentation').text_indentation
+>>> indent("This is the first line. It begins with the string: 'This is the first line'. Does it make sense? If not then it shouldn\'t")
+This is the first line
+<BLANKLINE>
+It begins with the string
+<BLANKLINE>
+'This is the first line'
+<BLANKLINE>
+Does it make sense
+<BLANKLINE>
+If not then it shouldn't
+>>> indent(34)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> indent(["This", "might", "be", "a", "string"])
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
