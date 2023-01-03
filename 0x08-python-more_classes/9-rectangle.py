@@ -25,6 +25,7 @@ class Rectangle:
             raise ValueError("height must be an integer")
         self.__height = height
         type(self).number_of_instances += 1 
+        
     @property
     def width(self):
         """Getter for private att width

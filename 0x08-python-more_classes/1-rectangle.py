@@ -10,6 +10,7 @@ class Rectangle:
             width (int/float): Value of width
             height (int/float): value of height
         """
+
         self.width = width
         self.height = height
 
@@ -19,7 +20,6 @@ class Rectangle:
         Return:
             Value of att width
         """
-
         return self.__width
     
     @width.setter
