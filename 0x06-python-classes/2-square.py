@@ -3,21 +3,50 @@
 Module of a Square class
 '''
 
-class Square:
-    """Defines a square by dimensions
-    Attributes:
-        size: size of square
-    """
-    
-    def __init__(self, size=0):
-        """"Sets instance size att
+class Rectangle:
+    """Represent a rectangle."""
+
+    def __init__(self, width=0, height=0):
+        """Initialize a new Rectangle.
         Args:
-            size: size of square
+            width (int): The width of the new rectangle.
+            height (int): The height of the new rectangle.
         """
-        if type(size) is int:
-            if size >= 0:
-                self.__size = size
-            else:
-                raise ValueError("size must be >= 0")
-        else:
-            raise TypeError("size must be an integer")
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        """Get/set the width of the Rectangle."""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """Get/set the height of the Rectangle."""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
+
+    def area(self):
+        """Return the area of the Rectangle."""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Return the perimeter of the Rectangle."""
+        if self.__width == 0 or self.__height == 0:
+            return (0)
+        return 2 * (self.__width + self.__height)
