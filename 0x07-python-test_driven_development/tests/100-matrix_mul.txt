@@ -1,0 +1,30 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> matrix_mul([[1, 2], [3, 4]], [[100, 200], [300, 400]])
+[[700, 1000], [1500, 2200]]
+>>> matrix_mul([[1.2, 2.4],[3.4, 4.5]], [[100, 200], [300, 400]])
+[[840.0, 1200.0], [1690.0, 2480.0]]
+
+>>> matrix_mul([[1, 2], [3, 4]], 3)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
+>>> matrix_mul([[1, 2], [3, 4]], [["3.4", '3'], "4"])
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list of lists
+>>> matrix_mul([["3.4", '3'], [4,"4"]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: m_a should contain only integers or floats
+>>> matrix_mul([[3.4, 3], [4,4]], [])
+Traceback (most recent call last):
+    ...
+ValueError: m_b can't be empty
+>>> matrix_mul([[]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty
+>>> matrix_mul([[3, 4], [2]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_a must be of the same size
