@@ -12,8 +12,9 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    seps = [': ', '? ', '. ']
+    seps = [": ", "? ", ". "]
+    reps = [":\n\n", "?\n\n", ".\n\n"]
 
-    for sep in seps:
-        text = text.replace(sep, '\n\n').strip()
+    for index, sep in enumerate(seps):
+        text = text.replace(sep, reps[index]).strip()
     print("{}".format(text))
