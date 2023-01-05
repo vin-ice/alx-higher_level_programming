@@ -12,7 +12,7 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    seps = [': ', '? ', '. ']
+    seps = [': ', '? ', '. ', '.', '?', ':']
 
     for sep in seps:
         text = text.replace(sep, '\n\n').strip()
