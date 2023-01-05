@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module for an add operation"""
 
+
 def add_integer(a, b=98):
     """Adds two integers and return the sum.
     Args:
@@ -16,4 +17,4 @@ def add_integer(a, b=98):
     elif not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
     else:
-        return (int(a) + int(b))
+        return int(a) + int(b)
