@@ -1,13 +1,18 @@
 #!/usr/bin/python3
-"""Module with a name printing function"""
+
+
+"""
+This file contains a function that prints a person's name
+say_my_name:
+    prints 'My name is <first name> <last name>
+"""
+
 
 def say_my_name(first_name, last_name=""):
-    """Prints a pair of strings
-    Args:
-        first_name (str): First name
-        last_name (str): Last name
     """
-    
+    prints a person's name in this format:
+        "My name is <first name> <last name>"
+    """
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):
