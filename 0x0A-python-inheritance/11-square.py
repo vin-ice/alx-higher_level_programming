@@ -1,23 +1,29 @@
 #!/usr/bin/python3
-"""Module with a custom inheriting class"""
+'''
+Module contains Rectangle Class
+'''
 
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
-    """Inherits from a subclass"""
-
+    '''
+    A Square class
+    '''
     def __init__(self, size):
-        """Inititializes size
-        Args:
-            size (int): sides
-        """
-
+        '''
+        args:
+            size (int): Side of the square
+        '''
         self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
-        """ returns area of shape"""
+        '''
+        Returns area of the Rectangle
+        '''
         return self.__size ** 2
 
     def __str__(self):
-        return ("[{}] {}/{}".format("Rectangle", self.__size, self.__size))
+        return ("[{}] {}/{}".format(type(self).__name__,
+                                    self.__size, self.__size))
