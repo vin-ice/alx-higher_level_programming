@@ -19,4 +19,3 @@ class MyInt(int):
 
     def __str__(self):
         return (str(self.number))
-Footer
