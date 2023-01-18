@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module with a class"""
 
 Base = __import__('base').Base

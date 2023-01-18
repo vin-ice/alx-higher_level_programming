@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Base Class module for the model package"""
 import json
 import csv

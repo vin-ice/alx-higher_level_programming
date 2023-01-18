@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module for the shape: square"""
 from rectangle import Rectangle
 
