@@ -30,7 +30,7 @@ class Base:
         Return:
             [] if None or empty else JSON string
         """
-        if not list_dictionaries or list_dictionaries == None or len(list_dictionaries) <= 0:
+        if list_dictionaries == None or len(list_dictionaries) <= 0:
             return "[]" 
         return json.dumps(list_dictionaries)
 
@@ -41,9 +41,10 @@ class Base:
             list_objects (list<Base>): list of Base objects
         """
         objs_str=""
-        if not list_objects == None:
-            objs_str = cls.to_json_string(list(map(lambda objects: objects.to_dictionary(), list_objects)))
-        with open(str(cls.__name__)+".json", mode="w", encoding="utf-8") as file:
+        if not list_objects is None:
+            objs_str = cls.to_json_string(list([objects.to_dictionary() for objects in list_objects]))
+        path = str(cls.__name__)+".json"
+        with open(path, mode="w", encoding="utf-8") as file:
             file.write(objs_str) 
         file.close()
 
@@ -53,7 +54,7 @@ class Base:
         Args:
             json_string (JSON): Json string
         """
-        if not json_string or json_string == None or len(json_string) == 0:
+        if json_string == None or len(json_string) == 0:
             return "[]"
         return json.loads(json_string)
 
