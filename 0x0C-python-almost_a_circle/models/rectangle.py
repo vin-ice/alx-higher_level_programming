@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Module with a class"""
 
-Base = __import__('base').Base
+from models.base import Base
 
 class Rectangle(Base):
     """Template defining shape: rectangle"""

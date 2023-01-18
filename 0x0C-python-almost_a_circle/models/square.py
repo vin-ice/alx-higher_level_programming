@@ -1,6 +1,8 @@
 #!/usr/bin/python3
+
 """Module for the shape: square"""
-from rectangle import Rectangle
+
+from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """Square class"""
@@ -52,4 +54,4 @@ class Square(Rectangle):
     def to_dictionary(self):
         """returns the dictionary representation of a Shape"""
 
-        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
