@@ -1,5 +1,7 @@
 """Base Class module for the model package"""
-import json, csv, turtle
+import json
+import csv
+import turtle
 
 class Base:
     """Base class of all  classes in this package.
