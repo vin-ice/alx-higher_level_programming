@@ -16,13 +16,13 @@ class Rectangle:
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         elif width < 0:
-            raise ValueError("width must be an integer")
+            raise ValueError("width must be >= 0")
         self.__width = width
         
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
         elif height < 0:
-            raise ValueError("height must be an integer")
+            raise ValueError("height must be >= 0")
         self.__height = height
         type(self).number_of_instances += 1 
     @property
@@ -43,7 +43,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
-            raise ValueError("width must be an integer")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -64,7 +64,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
-            raise ValueError("height must be an integer")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -99,7 +99,6 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         elif not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-
         if rect_1.area() >= rect_2.area():
             return rect_1
         else:
