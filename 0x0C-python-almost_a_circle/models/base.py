@@ -40,7 +40,7 @@ class Base:
         Args:
             list_objects (list<Base>): list of Base objects
         """
-        objs_str=""
+        objs_str="[]"
         if not list_objects is None:
             objs_str = cls.to_json_string(list([objects.to_dictionary() for objects in list_objects]))
         path = str(cls.__name__)+".json"
