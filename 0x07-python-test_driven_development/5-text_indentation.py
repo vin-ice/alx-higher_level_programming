@@ -16,5 +16,5 @@ def text_indentation(text):
     reps = [":\n\n", "?\n\n", ".\n\n"]
 
     for index, sep in enumerate(seps):
-        text = text.replace(sep, reps[index]).strip()
-    print("{}".format(text))
+        text = text.replace(sep, reps[index])
+    print("{}".format(text), end="")
