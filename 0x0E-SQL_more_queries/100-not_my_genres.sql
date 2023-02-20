@@ -1,5 +1,5 @@
 -- Lists all genres not linked to Dexter on hbtn_0d_tvshows
-SELECT tv_genres.name as genre
+SELECT tv_genres.name as name
     FROM tv_genres
 WHERE tv_genres.id NOT IN
     (
@@ -12,4 +12,4 @@ WHERE tv_genres.id NOT IN
                 WHERE title = 'Dexter'
             )
     )
-ORDER BY genre ASC;
+ORDER BY name ASC;
