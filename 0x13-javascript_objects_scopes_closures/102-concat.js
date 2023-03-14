@@ -14,7 +14,7 @@ const contentB = fs.readFileSync(argv[3], 'utf8', function (err, result) {
   if (err) console.log('error', err);
 });
 
-const contentC = `${contentA}\n${contentB}`;
+const contentC = contentA.concat(contentB);
 
 fs.writeFile(argv[4], contentC, 'utf8', function (err, result) {
   if (err) console.log('error', err);
