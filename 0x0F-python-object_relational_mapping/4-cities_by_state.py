@@ -5,6 +5,7 @@ Lists all cities from hbtn_0e_0_usa
 from sys import argv
 import MySQLdb
 
+
 def main():
     """
     Lists all cities from hbtn_0e_0_usa
@@ -23,9 +24,10 @@ def main():
 
     for city in cities:
         print(city)
-    
-    cursor.close() 
-    conn.close() 
+
+    cursor.close()
+    conn.close()
+
 
 if __name__ == "__main__":
     main()

@@ -6,6 +6,7 @@ from sys import argv
 from itertools import chain
 import MySQLdb
 
+
 def main():
     """
     Lists all cities of given state in hbtn_0e_04_usa
@@ -24,11 +25,12 @@ def main():
     args = argv[4]
     cursor.execute(stmt, (args, ))
     cities = cursor.fetchall()
-    
+
     print(', '.join(map(str, chain.from_iterable(cities))))
 
-    cursor.close() 
+    cursor.close()
     conn.close()
 
+
 if __name__ == '__main__':
-    main() 
+    main()
