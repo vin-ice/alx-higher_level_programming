@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Display all HTTP methods the server will accept
-curl -s -i -L -X OPTIONS http://"$1" | grep Allow | awk -F ': ' '{ print $2 }'
+curl -s -i -X OPTIONS http://"$1" | grep Allow | cut -d " " -f 2- 

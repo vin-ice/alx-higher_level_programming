@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Sends a request URL passed as an argument and displays status code of res
-curl -sI -w "%{http_code}\n" -o /dev/null http://"$1"
+curl -s -w "%{http_code}\n" -o /dev/null http://"$1"
